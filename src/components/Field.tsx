@@ -16,7 +16,7 @@ function Field({ name, value, onInput, type = "text" }: FieldProps) {
         type={type}
         value={value}
         onInput={onInput}
-        className="border"
+        className="border border-slate-400 bg-slate-500 p-1 rounded"
         required
       />
     </div>

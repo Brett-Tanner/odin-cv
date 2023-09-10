@@ -19,6 +19,9 @@ function BasicFields() {
 
   return (
     <div className="flex flex-wrap justify-center items-center gap-6">
+      <h1 className="w-full text-center text-3xl font-bold">
+        Personal Information
+      </h1>
       <Field
         name="firstName"
         value={basicDetails.firstName}

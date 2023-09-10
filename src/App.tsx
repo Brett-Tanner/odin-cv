@@ -5,7 +5,7 @@ import ExperienceFields from "./components/ExperienceFields";
 
 function App() {
   return (
-    <div className="w-screen min-h-screen flex justify-center items-center">
+    <div className="w-1/2 flex flex-col justify-center items-center gap-6">
       <form action="">
         <BasicFields />
       </form>
