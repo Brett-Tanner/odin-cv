@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import Field from "./Field";
+import EditSaveButton from "./EditSaveButton";
 
 function BasicFields() {
   const [basicDetails, setBasicDetails] = useState({
@@ -9,6 +10,7 @@ function BasicFields() {
     phone: "",
     age: "",
   });
+  const [editing, setEditing] = useState(true);
 
   const onInput = (e: ChangeEvent<HTMLInputElement>) => {
     setBasicDetails({
@@ -26,21 +28,35 @@ function BasicFields() {
         name="firstName"
         value={basicDetails.firstName}
         onInput={onInput}
+        editing={editing}
       />
-      <Field name="lastName" value={basicDetails.lastName} onInput={onInput} />
+      <Field
+        name="lastName"
+        value={basicDetails.lastName}
+        onInput={onInput}
+        editing={editing}
+      />
       <Field
         name="email"
         value={basicDetails.email}
         onInput={onInput}
+        editing={editing}
         type="email"
       />
-      <Field name="phone" value={basicDetails.email} onInput={onInput} />
+      <Field
+        name="phone"
+        value={basicDetails.phone}
+        onInput={onInput}
+        editing={editing}
+      />
       <Field
         name="age"
         value={basicDetails.age}
         onInput={onInput}
+        editing={editing}
         type="number"
       />
+      <EditSaveButton editing={editing} setEditing={setEditing} />
     </form>
   );
 }

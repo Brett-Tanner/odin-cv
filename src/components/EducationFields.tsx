@@ -26,9 +26,20 @@ function EducationFields() {
         name="university"
         value={eduDetails.university}
         onInput={onInput}
+        editing={editing}
       />
-      <Field name="major" value={eduDetails.major} onInput={onInput} />
-      <Field name="degree" value={eduDetails.degree} onInput={onInput} />
+      <Field
+        name="major"
+        value={eduDetails.major}
+        onInput={onInput}
+        editing={editing}
+      />
+      <Field
+        name="degree"
+        value={eduDetails.degree}
+        onInput={onInput}
+        editing={editing}
+      />
       <EditSaveButton editing={editing} setEditing={setEditing} />
     </form>
   );

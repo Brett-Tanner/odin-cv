@@ -4,13 +4,14 @@ interface EditSaveButtonProps {
 }
 
 function EditSaveButton({ editing, setEditing }: EditSaveButtonProps) {
-  function handleClick() {
+  function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
+    e.preventDefault();
     editing ? setEditing(false) : setEditing(true);
   }
 
   return (
     <button
-      type="button"
+      type="submit"
       onClick={handleClick}
       className="w-3/4 rounded-md bg-blue-600 hover:bg-blue-700 p-1 font-semibold"
     >
