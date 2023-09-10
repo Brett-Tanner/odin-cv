@@ -16,7 +16,7 @@ function ExperienceFields() {
   }
 
   return (
-    <div className="flex flex-wrap justify-center items-center gap-6">
+    <form className="flex flex-wrap justify-center items-center gap-6">
       <h1 className="w-full text-center text-3xl font-bold">
         Experience Information
       </h1>
@@ -27,7 +27,7 @@ function ExperienceFields() {
         value={expDetails.yearsExperience}
         onInput={onInput}
       />
-    </div>
+    </form>
   );
 }
 
