@@ -1,5 +1,45 @@
+import { ChangeEvent, useState } from "react";
+import Field from "./Field";
+
 function BasicFields() {
-  return <div></div>;
+  const [basicDetails, setBasicDetails] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    age: "",
+  });
+
+  const onInput = (e: ChangeEvent<HTMLInputElement>) => {
+    setBasicDetails({
+      ...basicDetails,
+      [e.currentTarget.id]: e.currentTarget.value,
+    });
+  };
+
+  return (
+    <div className="flex flex-wrap justify-center items-center gap-6">
+      <Field
+        name="firstName"
+        value={basicDetails.firstName}
+        onInput={onInput}
+      />
+      <Field name="lastName" value={basicDetails.lastName} onInput={onInput} />
+      <Field
+        name="email"
+        value={basicDetails.email}
+        onInput={onInput}
+        type="email"
+      />
+      <Field name="phone" value={basicDetails.email} onInput={onInput} />
+      <Field
+        name="age"
+        value={basicDetails.age}
+        onInput={onInput}
+        type="number"
+      />
+    </div>
+  );
 }
 
 export default BasicFields;
